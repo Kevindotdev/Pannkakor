@@ -16,7 +16,6 @@ main {
     max-width: 800px;
     margin: 0 auto;
     background: white;
-    border: 4px solid red;
     padding: 30px;
 }
 
@@ -41,9 +40,29 @@ ol {
 
 .bilder {
     display: flex;
+    gap: 10px;
 }
 
 .bilder img {
     width: 50%;
     object-fit: cover;
+}
+/* Responsiv design */
+@media (max-width: 600px) {
+    .headerbild {
+        width: 100%;
+        height: auto;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .bilder {
+        flex-direction: column;
+    }
+
+    .bilder img {
+        width: 100%;
+    }
 }
