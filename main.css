@@ -5,15 +5,15 @@ body {
 }
 
 .headerbild {
-    width: 800px;
-    height: 200px;
+    width: 900px;
+    height: 300px;
     object-fit: cover;
     display: block;
     margin: 0 auto;
 }
 
 main {
-    max-width: 800px;
+    max-width: 840px;
     margin: 0 auto;
     background: white;
     padding: 30px;
