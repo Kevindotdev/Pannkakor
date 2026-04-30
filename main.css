@@ -52,19 +52,31 @@ li {
     object-fit: cover;
 }
 /* Responsiv design */
-@media (max-width: 600px) {
+@media (max-width: 1100px) {
    h1 {
-        padding-top: 50px;
+        padding-top: 10%;
+        font-size: 7vw;
     }
     .headerbild {
         width: 100%;
         height: auto;
     }
-
+    #gray {
+        font-size: 4vw;
+        padding: 4vw;
+    }
     main {
         padding: 10px;
+        font-size: 4vw;
     }
-
+        ul,
+        ol {
+            padding-left: 10%;
+        }
+    
+        li {
+            margin-bottom: 1vh;
+        }
     .bilder {
         flex-direction: column;
     }
