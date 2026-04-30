@@ -5,15 +5,15 @@ body {
 }
 
 .headerbild {
-    width: 900px;
+    width: 1100px;
     height: 300px;
     object-fit: cover;
-    display: block;
+    display: flex;
     margin: 0 auto;
 }
 
 main {
-    max-width: 840px;
+    max-width: 1040px;
     margin: 0 auto;
     background: white;
     padding: 30px;
@@ -24,18 +24,18 @@ h1 {
     color: darkred;
 }
 
-.gray {
+#gray {
     background: lightgray;
     padding: 15px;
 }
 
 h2 {
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 ul,
 ol {
-    padding-left: 30px;;
+    padding-left: 30px;
 }
 
 li {
@@ -53,6 +53,9 @@ li {
 }
 /* Responsiv design */
 @media (max-width: 600px) {
+   h1 {
+        padding-top: 50px;
+    }
     .headerbild {
         width: 100%;
         height: auto;
