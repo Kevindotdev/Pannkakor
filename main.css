@@ -38,6 +38,10 @@ ol {
     padding-left: 30px;;
 }
 
+li {
+    margin-bottom: 10px;
+}
+
 .bilder {
     display: flex;
     gap: 10px;
