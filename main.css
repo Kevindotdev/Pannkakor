@@ -1,78 +1,120 @@
+/**** CSS reset ****/
+/* this section is for adding resets that makes a new clean base line for our CSS */
+
+/* makes sizing simpler */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* remove default spacing */
+* {
+  margin: 0;
+  padding: 0;
+
+  /* force styling of type through styling, rather than elements */
+  font: inherit;
+}
+
+/* responsive images/videos */
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+
+  /* ONE of these might be relevant to change how the image squish or clip */
+  object-fit: cover;
+  /* height: auto; */
+}
+
+/**** BODY ****/
 body {
-    margin: 0;
-    font-family: arial;
-    background-color: pink;
+  font-family: "Roboto", Arial, sans-serif;
+  background-color: pink;
+  margin-bottom: 2.5rem;
 }
 
-.headerbild {
-    width: 100%;
-    max-width: 1300px;
-    height: 300px;
-    object-fit: cover;
-    display: flex;
-    margin: auto;
+/**** HEADER ****/
+.header-image {
+  width: 100%;
+  max-width: 75rem;
+  height: 20rem;
+  margin: 0 auto;
 }
 
+/**** MAIN ****/
 main {
-    max-width: 1200px;
-    margin: auto;
-    background: white;
-    padding: 50px;
+  max-width: 75rem;
+  margin: 0 auto;
+  background: white;
+  padding: 3rem;
 }
 
+/**** TEXTS ****/
 h1 {
-    color: darkred;
+  color: darkred;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 800;
 }
 
-#gray {
-    background: lightgray;
-    padding: 15px;
+h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 1.5rem;
 }
+
+.gray-textbox {
+  background: lightgray;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/**** LISTS ****/
 ul,
 ol {
-    margin-left: -10px;
+  padding-left: 1.25rem;
+  margin-top: 1.5rem;
 }
 
 li {
-    margin-bottom: 10px;
+  margin-bottom: 0.75rem;
 }
 
-.bilder {
-    display: flex;
-    gap: 10px;
+/**** IMAGES ****/
+.serving-images {
+  display: flex;
+  gap: 1rem;
 }
 
-.bilder img {
-    width: 50%;
-    object-fit: cover;
+.serving-images img {
+  width: 50%;
+  object-fit: cover;
 }
-/* Responsiv design */
-@media (max-width: 800px) {
-   h1 {
-        font-size: 6vw;
-    }
-    h2 {
-        font-size: 5vw;
-    }
-    .headerbild {
-        width: 100%;
-        height: auto;
-    }
-    #gray {
-        font-size: 4vw;
-        padding: 4vw;
-    }
-    main {
-        padding: 4vw;
-        font-size: 4vw;
-    }
-        li {
-            line-height: 150%;
-        }
-    .bilder {
-        flex-direction: column;
-    }
-    .bilder img {
-        width: 100%;
-    }
+
+/* RESPONSIVE */
+@media (max-width: 50rem) {
+  h1 {
+    font-size: 1.75rem;
+  }
+  h2 {
+    font-size: 1.25rem;
+  }
+  .header-image {
+    height: auto;
+  }
+  main {
+    padding: 1rem;
+    padding-bottom: 2.5rem;
+  }
+  .serving-images {
+    flex-direction: column;
+  }
+  .serving-images img {
+    width: 100%;
+  }
 }
