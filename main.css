@@ -30,9 +30,33 @@ video {
   /* height: auto; */
 }
 
+/**** VARIABLES ****/
+:root {
+  /*font-familiy */
+  --ff-main: "Roboto", Arial, sans-serif;
+
+  /* font-weight */
+  --fw-bold: 600;
+  --fw-extrabold: 800;
+
+  /* font-size */
+  --fs-small: 1.25rem;
+  --fs-medium: 1.5rem;
+  --fs-extramedium: 1.75rem;
+  --fs-large: 2rem;
+
+  /* colors */
+  --clr-pink: pink;
+  --clr-lightgray: lightgray;
+  --clr-darkred: darkred;
+
+  /* sizes */
+  --size-main-max-width: 75rem;
+}
+
 /**** BODY ****/
 body {
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: var(--ff-main);
   background-color: pink;
   margin-bottom: 2.5rem;
 }
@@ -40,14 +64,14 @@ body {
 /**** HEADER ****/
 .header-image {
   width: 100%;
-  max-width: 75rem;
+  max-width: var(--size-main-max-width);
   height: 20rem;
   margin: 0 auto;
 }
 
 /**** MAIN ****/
 main {
-  max-width: 75rem;
+  max-width: var(--size-main-max-width);
   margin: 0 auto;
   background: white;
   padding: 3rem;
@@ -57,18 +81,18 @@ main {
 h1 {
   color: darkred;
   margin-bottom: 1rem;
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: var(--fs-large);
+  font-weight: var(--fw-extrabold);
 }
 
 h2 {
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.25rem;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-medium);
 }
 
-.gray-textbox {
+.recipe__gray-textbox {
   background: lightgray;
   padding: 1rem;
   margin-bottom: 1.5rem;
@@ -77,32 +101,31 @@ h2 {
 /**** LISTS ****/
 ul,
 ol {
-  padding-left: 1.25rem;
-  margin-top: 1.5rem;
+  padding-left: 1.5rem;
+  margin-top: 0.75rem;
+  li {
+    margin-bottom: 0.75rem;
+  }
 }
 
-li {
-  margin-bottom: 0.75rem;
-}
-
-/**** IMAGES ****/
-.serving-images {
+/**** SERVING IMAGES ****/
+.serving-suggestion__flexbox {
   display: flex;
   gap: 1rem;
+
+  img {
+    width: 50%;
+    object-fit: cover;
+  }
 }
 
-.serving-images img {
-  width: 50%;
-  object-fit: cover;
-}
-
-/* RESPONSIVE */
+/**** RESPONSIVE ****/
 @media (max-width: 50rem) {
   h1 {
-    font-size: 1.75rem;
+    font-size: var(--fs-extramedium);
   }
   h2 {
-    font-size: 1.25rem;
+    font-size: var(--fs-small);
   }
   .header-image {
     height: auto;
@@ -111,10 +134,10 @@ li {
     padding: 1rem;
     padding-bottom: 2.5rem;
   }
-  .serving-images {
+  .serving-suggestion__flexbox {
     flex-direction: column;
-  }
-  .serving-images img {
-    width: 100%;
+    img {
+      width: 100%;
+    }
   }
 }
