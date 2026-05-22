@@ -32,7 +32,7 @@ video {
 
 /**** VARIABLES ****/
 :root {
-  /*font-familiy */
+  /*font-family */
   --ff-main: "Roboto", Arial, sans-serif;
 
   /* font-weight */
@@ -46,9 +46,10 @@ video {
   --fs-large: 2rem;
 
   /* colors */
-  --clr-pink: pink;
-  --clr-lightgray: lightgray;
-  --clr-darkred: darkred;
+  --clr-body-background: pink;
+  --clr-main-background: white;
+  --clr-intro-heading: darkred;
+  --clr-intro-background: lightgray;
 
   /* sizes */
   --size-main-max-width: 75rem;
@@ -57,7 +58,7 @@ video {
 /**** BODY ****/
 body {
   font-family: var(--ff-main);
-  background-color: pink;
+  background-color: var(--clr-body-background);
   margin-bottom: 2.5rem;
 }
 
@@ -73,13 +74,13 @@ body {
 main {
   max-width: var(--size-main-max-width);
   margin: 0 auto;
-  background: white;
+  background: var(--clr-main-background);
   padding: 3rem;
 }
 
 /**** TEXTS ****/
 h1 {
-  color: darkred;
+  color: var(--clr-intro-heading);
   margin-bottom: 1rem;
   font-size: var(--fs-large);
   font-weight: var(--fw-extrabold);
@@ -92,8 +93,8 @@ h2 {
   font-size: var(--fs-medium);
 }
 
-.recipe__gray-textbox {
-  background: lightgray;
+.recipe__introduction-text {
+  background: var(--clr-intro-background);
   padding: 1rem;
   margin-bottom: 1.5rem;
 }
@@ -109,7 +110,7 @@ ol {
 }
 
 /**** SERVING IMAGES ****/
-.serving-suggestion__flexbox {
+.recipe__serving-images {
   display: flex;
   gap: 1rem;
 
@@ -134,7 +135,7 @@ ol {
     padding: 1rem;
     padding-bottom: 2.5rem;
   }
-  .serving-suggestion__flexbox {
+  .recipe__serving-images {
     flex-direction: column;
     img {
       width: 100%;
