@@ -34,6 +34,7 @@ video {
 :root {
   /*font-family */
   --ff-main: "Roboto", Arial, sans-serif;
+  --ff-nav: "Raleway", sans-serif;
 
   /* font-weight */
   --fw-bold: 600;
@@ -52,14 +53,14 @@ video {
   --clr-intro-background: lightgray;
 
   /* sizes */
-  --size-main-max-width: 75rem;  
+  --size-main-max-width: 75rem;
 }
 
 /**** BODY ****/
 body {
   font-family: var(--ff-main);
   background-color: var(--clr-body-background);
-  margin-block-end: 2.5rem;
+  margin-block-end: 3rem;
 }
 
 /**** HEADER ****/
@@ -68,6 +69,67 @@ body {
   max-width: var(--size-main-max-width);
   height: 20rem;
   margin: 0 auto;
+}
+
+/**** NAVBAR ****/
+.navbar {
+  display: flex;
+  align-items: center;
+  height: 7rem;
+  background-color: #404040;
+  font-family: var(--ff-nav);
+  max-width: var(--size-main-max-width);
+  margin: 0 auto;
+  padding-inline: 3rem;
+}
+
+.navbar__logo {
+  color: #f1f1f1;
+  letter-spacing: 0.5rem;
+  font-size: clamp(1.25rem, 2vw, 2rem);
+  font-weight: var(--fw-extrabold);
+  text-decoration: none;
+  z-index: 1000;
+  h1 {
+    font-style: oblique;
+  }
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: clamp(7rem, 2vw, 2.5rem);
+  flex: 1;
+  justify-content: center;
+  a {
+    color: #9b9a9a;
+    text-decoration: none;
+    letter-spacing: 0.15rem;
+    font-weight: bold;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    &:hover {
+      color: #f1f1f1;
+    }
+  }
+}
+
+/* Desktop login */
+.navbar__login {
+  list-style: none;
+  a {
+    color: #f1f1f1;
+    text-decoration: none;
+    letter-spacing: 0.15rem;
+    font-weight: bold;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+  }
+}
+
+/* Hide login--mobile and burgerMenu on desktop */
+.navbar__login--mobile,
+.burgerMenu {
+  display: none;
 }
 
 /**** MAIN ****/
@@ -79,14 +141,14 @@ main {
 }
 
 /**** TEXTS ****/
-h1 {
+h2 {
   color: var(--clr-intro-heading);
   margin-block-end: 1rem;
   font-size: var(--fs-large);
   font-weight: var(--fw-extrabold);
 }
 
-h2 {
+h3 {
   margin-block-start: 1.5rem;
   margin-block-end: 0.25rem;
   font-weight: var(--fw-bold);
@@ -97,6 +159,11 @@ h2 {
   background: var(--clr-intro-background);
   padding: 1rem;
   margin-block-end: 1.5rem;
+}
+
+.recipe-card__title,
+.recipes__title {
+  text-align: center;
 }
 
 /**** LISTS ****/
@@ -113,6 +180,7 @@ ol {
 .recipe__serving-images {
   display: flex;
   gap: 1rem;
+  justify-content: center;
 
   img {
     width: 50%;
@@ -120,12 +188,49 @@ ol {
   }
 }
 
+/**** RECIPE CARDS ****/
+.recipes__list {
+  display: grid;
+  gap: 1rem;
+  list-style: none;
+  /* grid-template-columns: repeat(4, minmax(10px, 1fr)); */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 1rem;
+}
+
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background-color: var(--clr-intro-background);
+  img {
+    width: 100%;
+  }
+}
+
+.recipe-card__description {
+  padding-inline: 1rem;
+  padding-block-start: 1rem;
+}
+
+.recipe-card__footer {
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.recipe-card__show-recipe {
+  text-decoration: none;
+  font-weight: var(--fw-extrabold);
+  color: var(--clr-intro-heading);
+}
+
 /**** RESPONSIVE ****/
 @media (max-width: 50rem) {
-  h1 {
+  h2 {
     font-size: var(--fs-extramedium);
   }
-  h2 {
+  h3 {
     font-size: var(--fs-small);
   }
   .header-image {
@@ -133,12 +238,68 @@ ol {
   }
   main {
     padding: 1rem;
-    padding-block-end: 2.5rem;
+    padding-block-end: 3rem;
   }
   .recipe__serving-images {
     flex-direction: column;
     img {
       width: 100%;
     }
+  }
+
+  /* Navbar mobile */
+  .navbar {
+    height: 5rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    justify-content: space-between;
+    .burgerMenu {
+      display: block;
+      z-index: 1000;
+      div {
+        width: 1.75rem;
+        height: 0.2rem;
+        background-color: #f1f1f1;
+        margin-block: 0.35rem;
+      }
+    }
+
+    .navbar__links {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: min(55vw, 15rem);
+      height: 100vh;
+      background-color: #404040;
+      flex-direction: column;
+      gap: 2rem;
+      transition: right 0.3s ease;
+      padding-bottom: 20rem;
+      &.active {
+        right: 0;
+      }
+      a {
+        font-size: 1.5rem;
+      }
+      /* Mobile login */
+      .navbar__login--mobile {
+        display: flex;
+        margin-top: 6rem;
+        a {
+          font-size: 1.5rem;
+          color: #f1f1f1;
+        }
+      }
+    }
+  }
+
+  /* Hide desktop login on mobile */
+  .navbar__login {
+    display: none;
+  }
+
+  body {
+    padding-top: 5rem;
   }
 }
