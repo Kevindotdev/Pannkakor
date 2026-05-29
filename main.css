@@ -95,7 +95,7 @@ body {
     font-size: clamp(1.25rem, 2vw, 2rem);
     font-weight: var(--fw-extrabold);
     text-decoration: none;
-    z-index: 1000;
+    /* z-index: 1000; */
     flex: 1;
     h1 {
       font-style: oblique;
@@ -209,7 +209,6 @@ ol {
   display: grid;
   list-style: none;
   gap: 1rem;
-  /* grid-template-columns: repeat(4, minmax(10px, 1fr)); */
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   padding: 1rem;
 }
@@ -265,9 +264,10 @@ ol {
     top: 0;
     width: 100%;
     justify-content: space-between;
+    z-index: 1000;
     .burgerMenu {
       display: block;
-      z-index: 1000;
+      /* z-index: 1000; */
       div {
         width: 1.75rem;
         height: 0.2rem;
@@ -275,23 +275,43 @@ ol {
         margin-block: 0.35rem;
       }
     }
+    .navbar__overlay {
+      position: fixed;
+      top: 5rem;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 5rem);
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 998;
+      &.active {
+      opacity: 1;
+      pointer-events: auto;
+      }
+    }
     ul {
-      padding-inline-start: inherit;
+      /* padding-inline-start: inherit; */
     }
     .navbar__links {
       position: fixed;
-      top: 0;
-      right: -100%;
-      width: min(55vw, 15rem);
-      height: 100vh;
+      top: 5rem;
+      right: 0;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      width: min(45vw, 15rem);
+      max-width: 100%;
+      height: calc(100vh - 5rem);
       background-color: #404040;
       flex-direction: column;
       gap: 3rem;
-      transition: right 0.3s ease;
       padding-block-start: 7rem;
       justify-content: flex-start;
+      align-items: center;
+      z-index: 999;
       &.active {
-        right: 0;
+        transform: translateX(0);
       }
       a {
         font-size: 1.5rem;
