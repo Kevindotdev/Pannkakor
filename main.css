@@ -89,52 +89,49 @@ body {
       margin-block-end: 0;
     }
   }
-  .navbar__logo,
-  .navbar__login {
-    flex: 1;
-  }
-}
-
-.navbar__logo {
-  color: #f1f1f1;
-  letter-spacing: 0.5rem;
-  font-size: clamp(1.25rem, 2vw, 2rem);
-  font-weight: var(--fw-extrabold);
-  text-decoration: none;
-  z-index: 1000;
-  h1 {
-    font-style: oblique;
-  }
-}
-
-.navbar__links {
-  display: flex;
-  list-style: none;
-  gap: clamp(7rem, 2vw, 2.5rem);
-  justify-content: center;
-  a {
-    color: #9b9a9a;
+  .navbar__logo {
+    color: #f1f1f1;
+    letter-spacing: 0.5rem;
+    font-size: clamp(1.25rem, 2vw, 2rem);
+    font-weight: var(--fw-extrabold);
     text-decoration: none;
-    letter-spacing: 0.15rem;
-    font-weight: bold;
-    font-size: clamp(1rem, 1.5vw, 1.25rem);
-    &:hover {
-      color: #f1f1f1;
+    z-index: 1000;
+    flex: 1;
+    h1 {
+      font-style: oblique;
     }
   }
-}
 
-/* Desktop login */
-.navbar__login {
-  display: flex;
-  list-style: none;
-  justify-content: flex-end;
-  a {
-    color: #f1f1f1;
-    text-decoration: none;
-    letter-spacing: 0.15rem;
-    font-weight: bold;
-    font-size: clamp(1rem, 1.5vw, 1.25rem);
+  .navbar__links {
+    display: flex;
+    list-style: none;
+    gap: clamp(7rem, 2vw, 2.5rem);
+    justify-content: center;
+    a {
+      color: #9b9a9a;
+      text-decoration: none;
+      letter-spacing: 0.15rem;
+      font-weight: bold;
+      font-size: clamp(1rem, 1.5vw, 1.25rem);
+      &:hover {
+        color: #f1f1f1;
+      }
+    }
+  }
+
+  /* Desktop login */
+  .navbar__login {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    flex: 1;
+    a {
+      color: #f1f1f1;
+      text-decoration: none;
+      letter-spacing: 0.15rem;
+      font-weight: bold;
+      font-size: clamp(1rem, 1.5vw, 1.25rem);
+    }
   }
 }
 
@@ -281,7 +278,6 @@ ol {
     ul {
       padding-inline-start: inherit;
     }
-
     .navbar__links {
       position: fixed;
       top: 0;
@@ -305,18 +301,17 @@ ol {
         display: flex;
         flex: 1;
         padding-block-end: 7rem;
-        align-items:flex-end;
+        align-items: flex-end;
         a {
           font-size: 1.5rem;
           color: #f1f1f1;
         }
       }
     }
-  }
-
-  /* Hide desktop login on mobile */
-  .navbar__login {
-    display: none;
+    /* Hide desktop login on mobile */
+    .navbar__login {
+      display: none;
+    }
   }
 
   body {
